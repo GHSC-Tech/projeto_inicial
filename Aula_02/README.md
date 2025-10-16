@@ -1,5 +1,7 @@
 # Aula_02
 
+Aprendendo sobre TypeError, Type Check, Type Conversion, try-except e if
+
 #  Série de Exercícios Práticos em Python
 
 Este repositório contém uma série estruturada de exercícios de programação em Python, desenvolvida para solidificar os conhecimentos nos conceitos fundamentais da linguagem.
