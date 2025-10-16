@@ -296,8 +296,49 @@ else:
 # 24 - Classificador de Números - Escreva um programa que solicite ao usuário para digitar um número. Utilize try-except para assegurar que a entrada seja numérica e utilize if-elif-else para classificar o número como "positivo", "negativo" ou "zero".
 #  Adicionalmente, identifique se o número é "par" ou "ímpar".
 
+while True:
+    entrada = input("Informe um numero para saber se será positivo, negativo ou zero: ")
 
+    try:
+        num = int(entrada)
+        break
+    except ValueError:
+        print("Entrada Inválida. Por favor, digite um número.")
 
+# Classificação do sinal
+if num > 0:
+    sinal = 'positivo'
+elif num < 0:
+    sinal = "negativo"
+else:
+    sinal = "zero"
 
+# Classificação da paridade
+if num % 2 == 0:
+    paridade = "par"
+else:
+    paridade = "ímpar"
 
-# 25 - Conversão de Tipo com Validação - Crie um script que solicite ao usuário uma lista de números separados por vírgula. O programa deve converter a string de entrada em uma lista de números inteiros. Utilize try-except para tratar a conversão de cada número e validar que cada elemento da lista convertida é um inteiro. Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
+# Exibindo os resultados
+print(f"O número {num} é {sinal} e {paridade}.")
+
+# 25 - Conversão de Tipo com Validação - Crie um script que solicite ao usuário uma lista de números separados por vírgula. O programa deve converter a string de entrada em uma lista de números inteiros. 
+# Utilize try-except para tratar a conversão de cada número e validar que cada elemento da lista convertida é um inteiro. 
+# Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
+
+while True:
+    entrada = input("Informe sua lista de números separados por vígula (Caso informe números com decimais separar por ponto, exemplo: 5.6): ")
+
+    itens = entrada.split(',')
+    list_numeros = []
+
+    try:
+        for item in itens:
+            num = float(item.strip())
+            list_numeros.append(num)
+        break
+    except ValueError:
+        print("Erro: Todos os itens devem ser números inteiros. Tente novamente.")
+        
+# Exibir a lista final
+print(f"A lista dos números inteiros é: {list_numeros}")
