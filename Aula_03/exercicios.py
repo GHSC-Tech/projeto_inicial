@@ -81,18 +81,92 @@ else:
     print("Dados de usuários válidos")
 
 
-
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
 # transações suspeitas. Uma transação é considerada suspeita se o valor for superior 
 # a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h). 
 # Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
 
+# Dado do exercício
+transacao = {'valor':12000, 'hora': 20}
+
+# Extraindo os dados
+valor_transacao = transacao['valor']
+horario_transacao = transacao['hora']
+
+# Lista para armazenar motivos de suspeita
+motivos_suspeita = []
+
+# Verificação do valor
+if valor_transacao > 10000:
+    motivos_suspeita.append("Valor da transação é suspeito (acima de R$10.000)")
+
+# Verificação o horário
+if horario_transacao < 9 or horario_transacao > 18:
+    motivos_suspeita.append("Horário da transação é suspeito (fora do horário comercial)")
+
+# Resultado
+if motivos_suspeita:
+    print("Transação suspeita:")
+    for motivo in motivos_suspeita:
+        print(f"- {motivo}")
+else:
+    print("Transação válida")
+
+
+
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
 
+
+texto_de_entrada = input("Informe o texto para a avaliação de repetição: ")
+
+texto_de_entrada = texto_de_entrada.lower()
+
+palavras = texto_de_entrada.split()
+
+contagem = {}
+
+for palavra in palavras:
+    if palavra in contagem:
+        contagem[palavra] += 1
+    else:
+        contagem[palavra] = 1
+
+print("\nContagem de palavras:")
+for palavra, quantidade1 in contagem.items():
+    print(f"{palavra}: {quantidade1}")
+
+
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
+
+# Entrada do usuário
+lista_entrada = input("Informe uma lista de valores para que seja normalizado (Os valores devem ser sepados por ','): ")
+
+# Separar os valores com base na vírgula
+lista_valores = lista_entrada.split(',')
+
+# Converter cada item da lista de string para float
+valores = [float(valor) for valor in lista_valores]
+
+# Calcular o valor mínimo e máximo da lista
+minimo = min(valores)
+maximo = max(valores)
+
+# Lista para armazenar os valores normalizados
+valores_normalizados = []
+
+# Aplicar a fórmula da normalização para cada valor
+for valor in valores:
+    normalizado = (valor - minimo) / (maximo - minimo)
+    valores_normalizados.append(normalizado)
+
+#Resultado
+print("Valores normalizados:", valores_normalizados)
+
+
+
 
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
@@ -119,3 +193,5 @@ else:
 
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+
+#{}
