@@ -166,16 +166,79 @@ for valor in valores:
 print("Valores normalizados:", valores_normalizados)
 
 
-
-
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
+
+usuarios = [
+    {"nome": "Alice", "email": "alice@email.com"},
+    {"nome": "Bob"},  # sem email
+    {"nome": "Carol", "email": "carol@email.com"},
+    {"nome": "", "email": "dan@email.com"},  # nome vazio
+]
+
+nome_vazio = []
+email_vazio = []
+
+for usuario in usuarios:
+   # Se o nome estiver vazio, salva o email
+   if usuario.get("nome", "") == "":
+       nome_vazio.append(usuario["email"])
+
+   # Se o email estiver vazio, salva o email
+   if usuario.get("email", "") == "":
+       email_vazio.append(usuario["nome"])
+
+print("Emails de usuários com nome vazio:", nome_vazio)
+print("Nomes de usuários com email vazio:", email_vazio)
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
 
+# Entrada do usuário
+entrada = input("Informe uma lista de valores inteiros para definir aqueles que são pares (Usar como separador a vírgula ','): ")
+
+# Converter cada item da lista de string para inteiros
+numeros = [int(valor) for valor in entrada.split(',')]
+
+# Lista para armazenar apenas os pares
+lista_num_pares = []
+
+# Verificar se cada número é par
+for num in numeros:
+    # Se o numero for par, salva na lista
+    if num % 2 == 0:
+        lista_num_pares.append(num)
+
+#Resultado
+print("Números pares:",lista_num_pares)
+
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+
+registro_vendas = [
+    {"categoria" : "bronze", "valor" : 1000},
+    {"categoria" : "silver", "valor" : 750},
+    {"categoria" : "gold", "valor" : 500},
+    {"categoria" : "gold", "valor" : 200},
+    {"categoria" : "bronze", "valor" : 100},
+    {"categoria" : "silver", "valor" : 150}
+]
+
+# Dicionário acumulador
+totais_por_categoria = {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0
+}
+
+# Loop pelas vendas
+for venda in registro_vendas:
+    categoria = venda["categoria"]
+    valor = venda["valor"]
+    totais_por_categoria[categoria] += valor
+
+#Resultado
+print(totais_por_categoria)
 
 ### Exercícios com WHILE
 
