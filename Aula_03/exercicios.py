@@ -252,12 +252,54 @@ while True:
     print(f"Você digitou: {entrada}")
 
 
-
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
 
+while True:
+    
+    try:
+        numero = int(input("Informe um valor dentro do intervalo de 1 a 10 (ou 0 para sair): "))
+        if numero == 0:
+            print("Você saiu do programa, obrigado!")
+            break
+        elif numero >= 1 and numero <= 10:
+            print("Número informado é válido.")
+        else:
+            print("Número informado é inválido.")
+    
+    except ValueError:
+        print("Entrada inválida! Por favor, digite um número inteiro.")
+
+
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
+
+url = "https://brasilapi.com.br/api/ibge/uf/v1"
+resposta = requests.get(url)
+
+dados = resposta.json()  # Lista de dicionários
+
+pagina = 0
+tamanho_pagina = 5
+total_dados = len(dados)
+
+while True:
+    inicio = pagina * tamanho_pagina
+    fim = inicio + tamanho_pagina
+
+    # Se não houver mais dados, encerra o loop
+    if inicio >= total_dados:
+        print("Não há mais páginas.")
+        break
+
+    pagina_dados = dados[inicio:fim]
+
+    print(f"\n📄 Página {pagina + 1}")
+    for estado in pagina_dados:
+        print(f"{estado['sigla']} - {estado['nome']} ({estado['regiao']['nome']})")
+
+    pagina += 1
+
 
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.

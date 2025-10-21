@@ -1,1 +1,4 @@
 **/tempCodeRunnerFile.py
+venv/
+__pycache__/
+*.pyc
