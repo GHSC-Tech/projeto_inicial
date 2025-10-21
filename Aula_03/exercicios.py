@@ -273,6 +273,7 @@ while True:
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
+import requests
 
 url = "https://brasilapi.com.br/api/ibge/uf/v1"
 resposta = requests.get(url)
