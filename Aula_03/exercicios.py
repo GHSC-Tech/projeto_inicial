@@ -305,6 +305,31 @@ while True:
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
 
+import random
+
+# Declarando os parâmetros
+
+contador_tentativas = 0
+limite_tentativas = 5
+conectado = False # Status para identificar que ainda não existe conexação
+
+while contador_tentativas < limite_tentativas and not conectado:
+    contador_tentativas += 1
+    print("Tentando conectar... (tentativa {contador_tentativas})")
+
+    #Simula o sucesso da conexão 50% de chance a cada tentativa.
+    conectado = random.choice([True, False])
+
+    if conectado:
+        print("Conexão bem-sucedida!")
+    else:
+        print("Falha na conexão. Tentando novamente...\n")
+    
+if not conectado:
+    print("Número máximo de tentativas atingido. Conexão falhou.")
+
+
+
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
 
