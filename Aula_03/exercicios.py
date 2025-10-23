@@ -333,4 +333,40 @@ if not conectado:
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
 
+#Solicita a entrada de valores do usuário
+lista_entrada = input("Informe uma lista de valores, quando quiser pausar o código digite a sequência 0. (Separar os números por vírgula): ")
+
+#Separa os valores da lista informada pelo usuário
+valores_lista = lista_entrada.split(",")
+
+#Inicio do índice e referência do tamanho da lista
+indice = 0
+tamanho = len(valores_lista)
+
+#Cria um loop para avaliar cada valor da lista 
+while indice < tamanho:
+    valor_str = valores_lista[indice].strip() # retira qualquer espaço da lista
+
+    #Converte os valores para inteiro, caso não seja informar.
+    try:
+        valor = int(valor_str)
+    except ValueError:
+        print(f"{valor_str} não é um número válido, pular...")
+        indice +=1 #Passa para o próximo membro da lista
+        continue
+    
+    # Avalia a entrada de saída
+    if valor == 0:
+        print("Programa interrompido pelo usuário.")
+        break
+
+    #Mostra cada valor da lista processado
+    print(f"Valor processado: {valor}" )
+
+    #Passa para o próximo número da lista.
+    indice +=1
+
+#Encerramento do loop
+print("Fim do processamento.")
+
 #{}
