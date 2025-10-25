@@ -73,3 +73,38 @@ print(c)
 print(c.count(5))#Conta as repetições do elemento
 print(c.index(2)) #Retorna o elemento da segunda posição
 print(c.index(5, 1)) # Retorna a posição do elemento após a posição 0
+
+
+##-------Lista-Part_1---------
+
+lanches = ['hambúrguer', 'suco', 'pizza', 'pudim']
+
+#Opções para remover um item de uma lista
+del lanches[3] # remove o pudim da lista
+lanches.pop(3)
+lanches.remove('pudim')
+
+
+#Metódo para eliminar só aquilo que estiver dentro da lista
+if 'café' in lanches:
+    lanches.remove('café')
+
+print(lanches)
+
+
+valores = [8,2,5,4,9,3,0]
+valores.sort() #Ordena os valores de uma lista, do menor para o maior
+valores.sort(reverse=True) #Ordena os valores de uma lista, do maior para o menor
+len(valores) #retorna a quantidade de elementos da lista
+valores.insert(2,0) #Insere um numero na lista, defini a posição desejada. (índice,valor)
+valores.pop()#remove o último elemento da lista.Para remover um elemento em uma posição específica, você precisa passar o índice como argumento 
+
+a = [2,3,4,7]
+b = a[:] #Copia a lista inteira de A para a variável B
+b[2] = 8 #Na lista B, troca o elemento do índice 2 por 8.
+print(f'Lista A: {a}')
+print(f'Lista A: {b}')
+
+
+#{}
+
