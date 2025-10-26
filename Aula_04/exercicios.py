@@ -95,10 +95,86 @@ lista_de_livros_usando_dict: dict = {
 print(lista_de_livros_usando_dict["livro_01"])
 
 
-
-
 # 4-Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
+
+dicionario_ocorrencias: str = {}
+entrada: str = input("Adicione um texto para ser avalidao: ")
+
+for e in entrada:
+    if e in dicionario_ocorrencias:
+        dicionario_ocorrencias[e] += 1
+    
+    else:
+        dicionario_ocorrencias[e] = 1
+    
+# Exibindo o resultado
+
+print("Ocorrências de caracteres:")
+for chave, valor in dicionario_ocorrencias.items():
+    print(f"'{chave}': {valor}")
+
+
 # 5-Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, calcule o preço total da lista de compras.
+
+# 1 - Solução
+
+from typing import Dict
+
+produto_1: Dict[str, float] = {
+    "Produto": "Maça",
+    "Valor": 0.45   
+}
+
+produto_2: Dict[str, float] = {
+    "Produto": "Banana",
+    "Valor": 0.30   
+}
+
+produto_3: Dict[str, float] = {
+    "Produto": "Cereja",
+    "Valor": 0.65  
+}
+
+# Lista que contém os produtos comprados
+lista_compras: list = [produto_1, produto_2, produto_3]
+
+# Variável para armazenar o valor total da compra
+valor_total: float = 0.0
+
+# Iterando sobre cada item na lista de compras
+for produto in lista_compras:
+    # Verificando se o dicionário tem a chave 'Valor'
+    if 'Valor' in produto:
+        valor_total += produto['Valor']  # Somando o valor ao total da compra
+
+# Exibindo o valor total
+print(f"Valor total da compra: R${valor_total:.2f}")
+
+# 2 - Solução
+
+# Dicionário com os preços dos produtos
+precos = {
+    "maçã": 0.45,
+    "banana": 0.30,
+    "cereja": 0.65
+}
+
+# Lista de compras com os produtos desejados
+lista_compras = ["maçã", "banana", "cereja"]
+
+# Variável para armazenar o total da compra
+total_compra = 0.0
+
+# Percorrendo a lista de compras
+for produto in lista_compras:
+    # Somando o valor de cada produto ao total
+    if produto in precos:
+        total_compra += precos[produto]
+
+# Exibindo o total
+print(f"Total da compra: R${total_compra:.2f}")
+
+
 
 # Exercícios intermediários e mais avançados
 
