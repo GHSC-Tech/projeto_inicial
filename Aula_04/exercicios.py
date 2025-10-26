@@ -1,12 +1,55 @@
 # Exercícios de Listas e Dicionários
 # 1-Crie uma lista com os números de 1 a 10 e use um loop para imprimir cada número elevado ao quadrado.
+
+# 1 - Solução
+
+lista_numeros: int =  []
+
+for elemento in range(1,11):
+    print(f'\nMinha lista tem os seguiintes números {elemento}.\n', end=" " )
+    lista_numeros.append(elemento ** 2)
+
+print("\nCada número foi elevado ao seu quadrado e o resultado seria esse:")
+print(lista_numeros, end=" ")
+
+# 2 - Solução
+
+# Criando a lista com números de 1 a 10
+lista_numeros: int = [element for element in range(1, 11)]
+
+# Usando um loop para imprimir cada número elevado ao quadrado
+for numero in lista_numeros:
+    print(f'O número {numero} elevado ao quadrado é {numero ** 2}.')
+
+
 # 2-Dada a lista ["Python", "Java", "C++", "JavaScript"], remova o item "C++" e adicione "Ruby".
 
+# 1 - Solução
+
+lista_itens: str = ["Python", "Java", "C++", "JavaScript"]
+
+if "C++" in lista_itens:
+    lista_itens.pop(2)
+    lista_itens.append("Ruby")
+else:
+    print('"C++" não encontrado na lista.')
+
+print(lista_itens)
+
+# 2 - Solução
+
+lista_itens: str = ["Python", "Java", "C++", "JavaScript"]
+
+if "C++" in lista_itens:
+    lista_itens.remove("C++")
+    lista_itens.append("Ruby")
+else:
+    print('"C++" não encontrado na lista.')
+
+print(lista_itens)
+
+
 # 3-Crie um dicionário para armazenar informações de um livro, incluindo título, autor e ano de publicação. Imprima cada informação.
-
-
-# Crie um dicionário para armazenar informações de um livro,
-# incluindo título, autor e ano de publicação. Imprima cada informação.
 
 from typing import Dict, Any
 
