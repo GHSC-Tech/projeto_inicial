@@ -181,8 +181,56 @@ print(f"Total da compra: R${total_compra:.2f}")
 # 6. Eliminação de Duplicatas
 # Objetivo: Dada uma lista de emails, remover todos os duplicados.
 
+# 1 - Solução
+
+lista_emails: list[str] = [
+    'claudio@gmail.com',
+    'carlos@gmail.com',
+    'breno@gmail.com',
+    'carlos@gmail.com',
+    'beatriz@gmail.com',
+    'claudio@gmail.com',
+]
+
+lista_atualizada: list[str] = set(lista_emails)
+
+print(lista_atualizada)
+
+# 2 - Solução
+
+lista_emails: list[str] = [
+    'claudio@gmail.com',
+    'carlos@gmail.com',
+    'breno@gmail.com',
+    'carlos@gmail.com',
+    'beatriz@gmail.com',
+    'claudio@gmail.com',
+]
+
+lista_atualizada: list[str] = []
+
+for e_email in lista_emails:
+    if e_email not in lista_atualizada:
+        lista_atualizada.append(e_email)
+
+print(lista_atualizada)
+
+
 # 7. Filtragem de Dados
 # Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
+
+idade: str = input("Informe uma lista de idades separadas por vírgula: ")
+
+lista_idade: list[int] = [int(x.strip()) for x in idade.split(',')]
+
+idade_maior_18: list[int] = []
+
+for idade in lista_idade:
+    if idade >= 18:
+        idade_maior_18.append(idade)
+
+print(idade_maior_18)
+
 
 # 8. Ordenação Personalizada
 # Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
