@@ -235,6 +235,36 @@ print(idade_maior_18)
 # 8. Ordenação Personalizada
 # Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
 
+# 1 - Solução
+
+lista_nome: str = [
+    "Augusto",
+    "Bento",
+    "Da Silva",
+    "Wellington",
+    "Bruno",
+    "Carla"
+]
+lista_nome.sort()
+
+print(lista_nome)
+
+# 2 - Solução
+
+pessoas: list[dict[str, int]] = [
+    {"nome": "Augusto", "idade": 20},
+    {"nome": "Bento", "idade": 25},
+    {"nome": "Da Silva", "idade": 22},
+    {"nome": "Wellington", "idade": 30},
+    {"nome": "Bruno", "idade": 19},
+    {"nome": "Carla", "idade": 28}
+]
+
+lista_ordenada: list[str] = sorted(pessoas, key=lambda pessoa: pessoa["nome"])
+
+for pessoa in lista_ordenada:
+    print(pessoa)
+
 # 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
 
