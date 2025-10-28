@@ -6,7 +6,7 @@
 lista_numeros: int =  []
 
 for elemento in range(1,11):
-    print(f'\nMinha lista tem os seguiintes números {elemento}.\n', end=" " )
+    print(f'\nMinha lista tem os seguintes números {elemento}.\n', end=" " )
     lista_numeros.append(elemento ** 2)
 
 print("\nCada número foi elevado ao seu quadrado e o resultado seria esse:")
@@ -73,7 +73,7 @@ lista_de_livros.append(livro_02)
 print(lista_de_livros)
 
 
-# Imprimi uma lista sequência dos elementos do dicionário.
+# Imprime uma sequência dos elementos do dicionário..
 for livro in lista_de_livros:
     for chave, valor in livro.items():
         print(f"{chave}: {valor}")
@@ -91,14 +91,14 @@ lista_de_livros_usando_dict: dict = {
     "Ano": 2007}
 }
 
-# Defini um item do dicionário para imprimir
+# Defino um item do dicionário para imprimir
 print(lista_de_livros_usando_dict["livro_01"])
 
 
 # 4-Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
 
 dicionario_ocorrencias: str = {}
-entrada: str = input("Adicione um texto para ser avalidao: ")
+entrada: str = input("Adicione um texto para ser avaliado: ")
 
 for e in entrada:
     if e in dicionario_ocorrencias:
@@ -267,6 +267,33 @@ for pessoa in lista_ordenada:
 
 # 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
+
+#S olicita a entrada de números
+numeros: str = input("Informe uma lista de idades separadas por vírgula: ")
+
+# Faz a conversão do tipo string para int
+lista_numeros: list[int] = [int(x.strip()) for x in numeros.split(',')]
+
+# Armazena o somatório da lista
+total_numeros: int = 0
+
+# Realiza a soma de cada item da lista
+for num in lista_numeros:
+    total_numeros += num
+
+# Calcula a média
+media: float = total_numeros / len(lista_numeros)
+
+# Resultado
+print(f"A média dos valores é: {media:.2f}")
+
+
+# Iterando sobre cada item na lista de compras
+for produto in lista_compras:
+    # Verificando se o dicionário tem a chave 'Valor'
+    if 'Valor' in produto:
+        valor_total += produto['Valor']  # Somando o valor ao total da compra
+
 
 # 10. Divisão de Dados em Grupos
 # Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
