@@ -268,7 +268,7 @@ for pessoa in lista_ordenada:
 # 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
 
-#S olicita a entrada de números
+# Solicita a entrada de números
 numeros: str = input("Informe uma lista de idades separadas por vírgula: ")
 
 # Faz a conversão do tipo string para int
@@ -298,23 +298,129 @@ for produto in lista_compras:
 # 10. Divisão de Dados em Grupos
 # Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
 
+
+#S olicita a entrada de números
+numeros: str = input("Informe uma lista de idades separadas por vírgula: ")
+
+# Faz a conversão do tipo string para int
+lista_numeros: list[int] = [int(x.strip()) for x in numeros.split(',')]
+
+lista_par = []
+lista_impar = []
+
+# Realiza a soma de cada item da lista
+for num in lista_numeros:
+    if num % 2 == 0 :
+        lista_par.append(num)
+        print(f'O número {num} foi adicionado a lista par.')
+    else:
+        lista_impar.append(num)
+        print(f'O número {num} foi adicionado a lista ímpar.')
+
+print("-"*50)
+print(f'Os números da lista par são: {lista_par}')
+
+print("-"*50)
+print(f'Os números da lista ímpar são: {lista_impar}')
+
 # Exercícios com Dicionários
 
 # 11. Atualização de Dados
 # Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
 
+# 1 - Solução
+
+from typing import Dict
+
+produto_1: Dict[str, float] = {
+    "Produto": "Maça",
+    "Valor": 0.45   
+}
+
+produto_2: Dict[str, float] = {
+    "Produto": "Banana",
+    "Valor": 0.30   
+}
+
+produto_3: Dict[str, float] = {
+    "Produto": "Cereja",
+    "Valor": 0.65  
+}
+
+print(f' O antigo valor da Maçã era de : {produto_1["Valor"]}')
+
+produto_1["Valor"] = 0.85
+
+print(f' O novo valor da Maçã é : {produto_1["Valor"]}')
+
+
+
 # 12. Fusão de Dicionários
 # Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
+
+from typing import Dict
+
+produto_1: Dict[str, float] = {
+    "Maça": 0.45   
+}
+
+produto_2: Dict[str, float] = {
+    "Banana": 0.30   
+}
+
+novo_dicionário = {**produto_1, **produto_2}
+
+print(novo_dicionário)
+
 
 # 13. Filtragem de Dados em Dicionário
 # Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
 
+# 1 - Solução 
+
+estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+
+novo_estoque = []
+
+for produto, quantidade in estoque.items():
+     if quantidade > 0:
+        novo_estoque.append((produto, quantidade))
+
+print(novo_estoque)
+
+# 2 - Solução 
+
+estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+
+estoque_positivo = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
+
+print(estoque_positivo)
+
 # 14. Extração de Chaves e Valores
 # Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
 
+hortifruti = {'laranja': 2, 'maçã': 3, 'pera': 4,  'banana': 1}
+
+# Listas separadas
+chaves = list(hortifruti.keys())
+valores = list(hortifruti.values())
+
+print("Lista de produtos:", chaves)
+print("Lista de quantidades:", valores)
 
 # 15. Contagem de Frequência de Itens
 # Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
+texto = "engenharia de dados"
 
+novo_texto = texto.lower()
 
- #{}
+frequencia = {}
+
+for contar in novo_texto:
+    if contar in frequencia:
+        frequencia[contar] += 1
+    else:
+        frequencia[contar] = 1
+    
+print(frequencia)
+
