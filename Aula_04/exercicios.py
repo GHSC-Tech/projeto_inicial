@@ -428,7 +428,44 @@ print(frequencia)
 # Exercícios de Funções
 # 16 - Escreva uma função que receba uma lista de números e retorne a soma de todos os números.
 
+numeros: list = [1, 2, 5, 8, 15, 38, 50, -20, 250]
+
+def somar_numeros (numeros: list[int]) -> int:
+
+    soma: int = 0
+
+    for numero in numeros:
+        soma += numero
+    return soma
+
+
+resultado = somar_numeros(numeros)
+
+print(resultado)
+
+
 # 17 - Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário.
+
+
+def testar_primo(n: int) -> bool:
+
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    if n % 2 ==0:
+        return False
+    
+    for i in range(3, int(n**0.5)+ 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+avaliar_numero = int(input("Informe um numero para ser avaliado: "))
+
+validar_numero = testar_primo(avaliar_numero)
+
+print(f"{avaliar_numero} é primo? {validar_numero}")
 
 # 18 - Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
 

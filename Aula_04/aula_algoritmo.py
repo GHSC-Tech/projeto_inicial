@@ -2,15 +2,12 @@ lista_de_numeros: list = [40,50,60,70,0,-408593,1,50]
 lista_de_numeros_02: list = [40,60,70,0,-408593,1,50]
 lista_de_numeros_03: list = [40,60,70,0,1,50]
 
-
-
 # [40,50,60,70,0,-408593,1,50]
-
 # [50,60,70,0,-408593,1,50]
 
 def ordenar_lista_de_numeros(numeros: list) -> list:
     
-    nova_lista_de_numeros = []
+    nova_lista_de_numeros: list = []
 
     try:
         nova_lista_de_numeros = numeros.copy()
