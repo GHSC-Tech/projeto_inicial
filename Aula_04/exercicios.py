@@ -469,6 +469,46 @@ print(f"{avaliar_numero} é primo? {validar_numero}")
 
 # 18 - Desenvolva uma função que receba uma string como argumento e retorne essa string revertida.
 
+def reverter_texto(texto: str) -> str:
+    return  texto[::-1]
+
+avaliar_texto: str = input("Informe um texto para ser avaliado: ")
+
+validar_texto = reverter_texto(avaliar_texto)
+
+print(f"O texto invertido de '{avaliar_texto}' é: '{validar_texto}'")
+
+
 # 19 - Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as combinações de pares na lista que somem ao número dado.
 
+lista_numeros: list = [1, 2, 5, 8, 15, 38, 50, -20, 250]
+numero: int = 50
+
+def combinar_lista(lista: list[int], alvo: int) -> list[tuple[int, int]]:
+
+    nova_lista = []
+
+    for i in range(len(lista)):
+        for j in range(i + 1, len(lista)):
+            if lista[i] + lista[j] == alvo:
+                nova_lista.append((lista[i], lista[j]))
+        
+    if nova_lista:  # se a lista não estiver vazia
+        return nova_lista
+    else:
+        return f"Não existe combinação na lista de números que some {alvo}."
+
+pares = combinar_lista(lista_numeros, numero)    
+print(f"Pares que somam {numero}: {pares}")
+   
+
 # 20 - Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas
+
+dicionario: dict[str, int] = {"banana": 3, "abacaxi": 5, "maçã": 2}
+
+def ordenar_produto_dicionario(dicionario: dict[str, int]) -> list[str]:
+    return sorted(dicionario.keys())  # sorted retorna uma nova lista ordenada
+
+ordenacao = ordenar_produto_dicionario(dicionario)
+print(ordenacao)
+
