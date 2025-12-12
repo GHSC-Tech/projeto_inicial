@@ -1,0 +1,16 @@
+from wifi_qrcode_generator.generator import wifi_qrcode
+from PIL import Image
+
+ssid = "CLCODING_WIFI"
+password = "supersecret123"
+security = "WPA"
+
+# gerar QR Code
+qr = wifi_qrcode(ssid, hidden=False, authentication_type=security, password=password)
+
+# salvar imagem
+qr_image = qr.make_image()
+qr_image.save("wifi_qr.png")
+
+# abrir arquivo gerado
+Image.open("wifi_qr.png").show()
