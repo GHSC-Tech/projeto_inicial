@@ -1,16 +1,15 @@
-[project]
+[tool.poetry]
 name = "aula-08"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Guilherme",email = "carlosqa.ch@gmail.com"}
-]
+authors = ["Guilherme <carlosqa.ch@gmail.com>"]
 readme = "README.md"
+
+[tool.poetry.dependencies]
 python = "^3.11"
 pandera = "^0.18.0"
 pandas = "^2.2.1"
 fastparquet = "^2024.2.0"
-
 
 [build-system]
 requires = ["poetry-core"]
