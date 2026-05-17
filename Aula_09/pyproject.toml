@@ -6,9 +6,11 @@ authors = [
     {name = "GHSC-Tech",email = "carlosqa.ch@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12,<4.0"
 dependencies = [
-    "pandas (>=3.0.3,<4.0.0)"
+    "pandas (>=2.2.0,<3.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "tenacity (>=9.1.4,<10.0.0)"
 ]
 
 
